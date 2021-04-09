@@ -1,0 +1,7 @@
+FROM    alpine:3.13.4
+RUN     apk update 
+RUN     apk add g++ make ncurses-dev git
+RUN     git clone https://github.com/alexdantas/nSnake.git
+WORKDIR nSnake
+RUN     make
+CMD     bin/nsnake
